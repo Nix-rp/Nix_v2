@@ -1,0 +1,5 @@
+#Exclude files in tests/
+test/**
+
+#Exclude files wich end by a ~ (gedit)
+*[~]
