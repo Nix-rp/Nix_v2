@@ -3,12 +3,16 @@
 
 session_start();
 
-//Définition répertoire
-define('root_path', 'Nix_v2/');
-define('db_path', '../../db.php');
+include_once('includes/html_header.php');
+include_once('includes/html_footer.php');
 
 $dispForm = true;
 $wrong = false;
+
+//Définition répertoire
+define('root_path', 'Nix_v2/');
+define('db_path', '../../db.php');
+define('title', 'Nix - Connection');
 
 //Traitements
 
@@ -21,12 +25,19 @@ if (isset($_POST['action']))
 		if ($_SESSION['connected'])
 		{
 			$_SESSION['connected'] = false;
+
+			html_header(title);
 			?><p>À bientôt <?=$_SESSION['name']?>.</p><?php
+			html_footer();
+
 			$dispForm = false;
 		}
 		else
 		{
+			html_header(title);
 			?><p>Vous n'êtes pas connecté. Par ce fait vous ne pouvez pas vous déconnecter. (Merci cap'tain obvious !)</p><?php
+			html_footer();
+
 			$dispForm = false;
 		}
 	}
@@ -53,7 +64,9 @@ if (isset($_POST['action']))
 
 			$_SESSION['alertEmail'] = ($line['activate'] != 'true') ? true : false;
 
+			html_header(title);
 			?><p>Bonjour <?=$_SESSION['name']?>.</p><?php
+			html_footer();
 
 			$dispForm = false;
 		}
@@ -63,22 +76,29 @@ if (isset($_POST['action']))
 }
 else if ($_SESSION['connected'])
 {
+	html_header(title);
 	?><p>Vous êtes déjà connecté <?=$_SESSION['name']?>.</p><?php
+	html_footer();
+	
 	$dispForm = false;
 }
 
 //Affichage du formulaire
 if ($dispForm)
 {
+	html_header(title);
 	?>
-	<form method="POST" action="<?=root_path?>login.php">
+	<form method="POST" action="login.php">
 		<label for ="pseudo">Pseudo :</label><input type="text" id="pseudo" name="pseudo" /><br />
-		<label for="pwd">Mot de passe :</label><input type="password" id="pwd" name="pwd" />
+		<label for="pwd">Mot de passe :</label><input type="password" id="pwd" name="pwd" /><br />
+
 		<input type="submit" value="Connection" />
-		<input type="reset" value="Annuler" /><?php if ($wrong) { ?>
+		<input type="reset" value="Annuler" />
+		<input type="hidden" name="action" value="connection" /><?php if ($wrong) { ?>
 		<p>Pseudo ou mot de passe incorect.</p><?php } ?>
 	</form>
 	<?php
+	html_footer();
 }
 
 ?>
