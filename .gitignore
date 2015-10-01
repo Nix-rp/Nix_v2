@@ -1,5 +1,6 @@
 #Exclude files in tests/
 tests/**
 
-#Exclude files wich end by a ~ (gedit)
+#Exclude files wich end by a ~ (gedit) and a .swp (vim)
 *[~]
+*.swp
