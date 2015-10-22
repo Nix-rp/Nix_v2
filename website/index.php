@@ -1,6 +1,7 @@
 <?php
 include_once('includes/html_header.php');
 include_once('includes/html_footer.php');
+include_once('includes/nav.php');
 
 html_header('acceuil');
 ?>
@@ -8,5 +9,6 @@ html_header('acceuil');
 
 	<p>Version 2 de Nix, sources ici : <a href="https://github.com/Aelerinya/Nix_v2">Dépôt Github</a></p>
 <?php
+nav();
 html_footer();
 ?>
