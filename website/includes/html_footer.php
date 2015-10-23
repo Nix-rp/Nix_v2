@@ -1,6 +1,8 @@
 <?php function html_footer ()
 {
 ?>
+		</section>
+
 		<script src="includes/ga.js"></script>
 	</body>
 

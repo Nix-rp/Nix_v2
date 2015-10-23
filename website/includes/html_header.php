@@ -1,5 +1,9 @@
 <?php function html_header ($title = 'Nix', $style = false, $desc = false)
 {
+
+	define('css_directory','style/');
+	define('main_style_file','style_main.css');
+
 ?><!DOCTYPE html>
 <html>
 	<head>
@@ -16,9 +20,17 @@
 		if ($style) { ?>
 		<link rel="stylesheet" href="<?=css_directoy.$style?>" />
 		<?php } ?>
+		<link rel="stylesheet" href="<?=css_directory.main_style_file?>" />
 	</head>
 
 	<body>
+		<header>
+		</header>
+
+		<?php include('includes/nav.php');
+		nav(); ?>
+
+		<section id="main_content">
 <?php
 }
 ?>

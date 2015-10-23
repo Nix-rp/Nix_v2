@@ -1,0 +1,7 @@
+body {
+	margin: 0;
+}
+#main_nav, #main_content {
+	display: inline-block;
+	vertical-align: top;
+}
