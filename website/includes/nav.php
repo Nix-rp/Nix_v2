@@ -67,8 +67,6 @@
             <h4 class="navhead">Personnel</h4>
             <li><a href="account.php">Mon Compte</a></li>
             <li><a href="mp.php">Messages privés</a></li>
-            <li><a href="background.php">Background</a></li>
-            <li><a href="administration.php">Administration du Serveur</a></li>
         <ul>
     </nav>
     
