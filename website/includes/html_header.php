@@ -1,6 +1,5 @@
 <?php function html_header ($title = 'Nix', $style = false, $desc = false)
 {
-
 	define('css_directory','style/');
 	define('main_style_file','style_main.css');
 

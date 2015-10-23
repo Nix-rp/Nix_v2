@@ -1,5 +1,8 @@
 <?php
 ini_set('display_errors',true);
+
+session_start();
+
 include_once('includes/html_header.php');
 include_once('includes/html_footer.php');
 

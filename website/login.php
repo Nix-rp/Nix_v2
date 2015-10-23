@@ -1,6 +1,7 @@
 <?php
-//Initialisations diverses
+ini_set('display_errors',true);
 
+//Initialisations diverses
 session_start();
 
 include_once('includes/html_header.php');
@@ -14,37 +15,37 @@ define('root_path', 'Nix_v2/');
 define('db_path', '../../db.php');
 define('title', 'Nix - Connection');
 
+html_header(title);
+
 //Traitements
+
+	//Déconnection
+
+if (isset($_GET['action']) && $_GET['action'] == 'disconnection')
+{
+	if ($_SESSION['connected'])
+	{
+		$_SESSION['connected'] = false;
+
+		?><p>À bientôt <?=$_SESSION['name']?>.</p><?php
+
+		$dispForm = false;
+	}
+	else
+	{
+		?><p>Vous n'êtes pas connecté. Par ce fait vous ne pouvez pas vous déconnecter. (Merci cap'tain obvious !)</p><?php
+
+		$dispForm = false;
+	}
+}
 
 if (isset($_POST['action']))
 {
-	//Déconnection
-
-	if ($_POST['action'] == 'disconnection')
-	{
-		if ($_SESSION['connected'])
-		{
-			$_SESSION['connected'] = false;
-
-			html_header(title);
-			?><p>À bientôt <?=$_SESSION['name']?>.</p><?php
-			html_footer();
-
-			$dispForm = false;
-		}
-		else
-		{
-			html_header(title);
-			?><p>Vous n'êtes pas connecté. Par ce fait vous ne pouvez pas vous déconnecter. (Merci cap'tain obvious !)</p><?php
-			html_footer();
-
-			$dispForm = false;
-		}
-	}
+	
 
 	//Connection
 
-	else if ($_POST['action'] == 'connection' && isset($_POST['pseudo']) && $_POST['pseudo'] && isset($_POST['pwd']) && $_POST['pwd'])
+	if ($_POST['action'] == 'connection' && isset($_POST['pseudo']) && $_POST['pseudo'] && isset($_POST['pwd']) && $_POST['pwd'])
 	{
 		include(db_path);
 		$db = init_db();
@@ -64,9 +65,7 @@ if (isset($_POST['action']))
 
 			$_SESSION['alertEmail'] = ($line['activate'] != 'true') ? true : false;
 
-			html_header(title);
 			?><p>Bonjour <?=$_SESSION['name']?>.</p><?php
-			html_footer();
 
 			$dispForm = false;
 		}
@@ -76,17 +75,15 @@ if (isset($_POST['action']))
 }
 else if ($_SESSION['connected'])
 {
-	html_header(title);
 	?><p>Vous êtes déjà connecté <?=$_SESSION['name']?>.</p><?php
-	html_footer();
 	
 	$dispForm = false;
 }
 
 //Affichage du formulaire
+
 if ($dispForm)
 {
-	html_header(title);
 	?>
 	<form method="POST" action="login.php">
 		<label for ="pseudo">Pseudo :</label><input type="text" id="pseudo" name="pseudo" /><br />
@@ -98,7 +95,7 @@ if ($dispForm)
 		<p>Pseudo ou mot de passe incorect.</p><?php } ?>
 	</form>
 	<?php
-	html_footer();
 }
 
+html_footer();
 ?>
