@@ -5,3 +5,9 @@ body {
 	display: inline-block;
 	vertical-align: top;
 }
+#main_content {
+	width: 80%;
+}
+#main_content {
+	width: 15%;
+}
