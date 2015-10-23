@@ -35,7 +35,7 @@
     <nav>
         <ul>
             
-            <h4 class="navhead">Personnage/h4>
+            <h4 class="navhead">Personnage</h4>
             <li><a href="perso.php">Mon Personnage</a></li>
         <ul>
     </nav>
@@ -44,7 +44,7 @@
     <nav>
         <ul>
             
-            <h4 class="navhead">Panel de modération/h4>
+            <h4 class="navhead">Panel de modération</h4>
             <li><a href="staffrules.php">Règles du staff</a></li>
             <li><a href="whitelist.php">Modération de la whitelist</a></li>
         <ul>
