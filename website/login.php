@@ -33,7 +33,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'disconnection')
 	}
 	else
 	{
-		?><p>Vous n'êtes pas connecté. Par ce fait vous ne pouvez pas vous déconnecter. (Merci cap'tain obvious !)</p><?php
+		?><p>Vous n'êtes pas connecté. De ce fait vous ne pouvez pas vous déconnecter.</p><?php
 
 		$dispForm = false;
 	}
@@ -92,7 +92,7 @@ if ($dispForm)
 		<input type="submit" value="Connection" />
 		<input type="reset" value="Annuler" />
 		<input type="hidden" name="action" value="connection" /><?php if ($wrong) { ?>
-		<p>Pseudo ou mot de passe incorect.</p><?php } ?>
+		<p>Pseudo ou mot de passe incorrect.</p><?php } ?>
 	</form>
 	<?php
 }
