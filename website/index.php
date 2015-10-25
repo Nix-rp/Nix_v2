@@ -12,7 +12,7 @@ html_header('acceuil');
 
 	<p>Version 2 de Nix, sources ici : <a href="https://github.com/Aelerinya/Nix_v2">Dépôt Github</a></p>
 
-	<h4>Nix, qu'est-ce que c'est ?</h4>
+	<h4>Qu'est-ce que Nix ?</h4>
 
 	<p>Nix est un serveur dit &laquo; Roleplay &raquo; sur le thème d'une contrée enneigé. Nous pouvons aussi appeler ce type de jeu &laquo; Méta-Gaming &raquo;. Dans cette contrée, deux factions sont en guerre pour des raisons plus ou moins secrètes et obscures. Guidés par des êtres étranges.. et plus ou moins divins.. les membres de nos deux factions se lancent dans une guerre sanglante.. où il faudra être le plus stratégique possible. Chaque action compte.</p>
 
